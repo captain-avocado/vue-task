@@ -3,11 +3,11 @@ import App from "./App.vue";
 import store from "./store";
 import SvgIcon from "vue-svgicon";
 import VueTruncate from 'vue-truncate-filter';
-// import VueLazyLoad from 'vue-lazyload';
-import VueTinyLazyloadImg from 'vue-tiny-lazyload-img'
+import VueLazyLoad from 'vue-lazyload';
+// import VueTinyLazyloadImg from 'vue-tiny-lazyload-img'
 
 import 'intersection-observer';
-Vue.use(VueTinyLazyloadImg);
+// Vue.use(VueTinyLazyloadImg);
 
 Vue.use(SvgIcon, {
   tagName: "svgicon"
@@ -15,13 +15,15 @@ Vue.use(SvgIcon, {
 
 Vue.use(VueTruncate);
 
-// Vue.use(VueLazyLoad, {
-//   preLoad: 1,
-//   error: './error.png',
-//   loading: './loading.gif',
-//   attempt: 1
-// });
+Vue.use(VueLazyLoad, {
+  preLoad: 1,
+  error: './error.png',
+  loading: './loading.gif',
+  attempt: 1
+});
 
+
+//filters
 Vue.filter('installs-round', (string) => {
   const num = Number(string);
   if (isNaN(num)) {
@@ -44,13 +46,13 @@ Vue.filter('truncate-mobile', (string, length, screenSize) => {
   return string;
 });
 
-
 Vue.filter('point-rating', (string) => {
   if (typeof string !== 'string') {
     string = string.toString();
   }
   return string.replace('.', ',');
 });
+
 
 Vue.config.productionTip = false;
 
