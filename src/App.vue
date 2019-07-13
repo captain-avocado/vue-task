@@ -1,5 +1,6 @@
 <template lang="pug">
 #app.app
+  script(type="application/javascript" src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver")
   .app__container
     SelectBar.app__select-bar
     CardList
