@@ -6,6 +6,7 @@ import VueTruncate from 'vue-truncate-filter';
 // import VueLazyLoad from 'vue-lazyload';
 import VueTinyLazyloadImg from 'vue-tiny-lazyload-img'
 
+import 'intersection-observer';
 Vue.use(VueTinyLazyloadImg);
 
 Vue.use(SvgIcon, {
