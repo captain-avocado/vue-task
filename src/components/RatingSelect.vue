@@ -61,7 +61,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    height: 4 * 34px;
+    height: 5 * 30px;
     z-index: -1;
     border-radius: 10px;
     background-color: $bg-color;
@@ -84,7 +84,8 @@ export default {
   }
 
   .multiselect__option {
-    min-height: 34px;
+    // min-height: 34px;
+    min-height: 30px;
     padding: 0;
     padding-left: 18px;
     display: flex;
@@ -151,6 +152,7 @@ export default {
     background-color: $bg-color;
     border: 0;
     position: relative;
+    padding: 10px 0 13px;
   }
 
   //option styles
