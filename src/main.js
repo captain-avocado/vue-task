@@ -4,10 +4,11 @@ import store from "./store";
 import SvgIcon from "vue-svgicon";
 import VueTruncate from 'vue-truncate-filter';
 import VueLazyLoad from 'vue-lazyload';
-// import VueTinyLazyloadImg from 'vue-tiny-lazyload-img'
+import PerfectScrollbar from 'vue2-perfect-scrollbar'
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 
-import 'intersection-observer';
-// Vue.use(VueTinyLazyloadImg);
+//plugins
+Vue.use(PerfectScrollbar)
 
 Vue.use(SvgIcon, {
   tagName: "svgicon"
@@ -53,6 +54,10 @@ Vue.filter('point-rating', (string) => {
   return string.replace('.', ',');
 });
 
+Vue.filter('rating', (string) => {
+  return 'от ' + string + ',0';
+});
+
 
 Vue.config.productionTip = false;
 
@@ -60,3 +65,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app");
+

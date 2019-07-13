@@ -2,7 +2,6 @@
   .card
     .card__top-row
       .card__img-wrap
-        //- img.card__img(v-lazyload src="@/assets/images/loading.gif" :data-src="icon" data-err="@/assets/images/error.png")
         img.card__img(v-lazy="icon")
       .card__info
         .card__name {{ name | truncate(50) }}

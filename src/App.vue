@@ -1,5 +1,5 @@
 <template lang="pug">
-#app.app
+PerfectScrollbar#app.app
   .app__container
     SelectBar.app__select-bar
     CardList
@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 .app {
   min-height: 100vh;
+  height: 100vh;
   background-color: $bg-color;
 
   @include wrapper;

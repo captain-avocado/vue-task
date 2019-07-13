@@ -9,11 +9,11 @@
       @input="SET_RATING"
     )
       template(slot="singleLabel", slot-scope="props")
-        .option__text {{'от ' + props.option + ',0'}}
+        .option__text {{ props.option | rating }}
         svgicon(name="star" color="#F8BF25").card__star
 
       template(slot="option", slot-scope="props")
-        .option__text {{'от ' + props.option + ',0'}}
+        .option__text {{ props.option | rating }}
         svgicon(name="star" color="#F8BF25").card__star
 </template>
 <script>
