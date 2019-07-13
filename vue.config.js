@@ -10,5 +10,5 @@ module.exports = {
       }
     }
   },
-  publicPath: 'vue-task'
+  publicPath: 'vue-task/dist'
 };
