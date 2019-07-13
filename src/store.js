@@ -86,7 +86,7 @@ export default new Vuex.Store({
         commit(FETCH_WORKSPACES, app.workspaces);
         commit(SET_ACTIVE_WORKSPACE, app.activeWorkspaceId);
       } else {
-        fetch('http://localhost:8080/vue-task/apps.json')
+        fetch('./apps.json')
           .then(response => {
             return response.json();
           })
