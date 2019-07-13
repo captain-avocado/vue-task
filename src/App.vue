@@ -1,29 +1,42 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+<template lang="pug">
+#app.app
+  .app__container
+    SelectBar.app__select-bar
+    CardList
 </template>
+<script>
+import "@/assets/sass/main.scss";
+import SelectBar from "@/components/SelectBar.vue";
+import CardList from "@/components/CardList.vue";
+import { FETCH_WORKSPACES } from "@/mutation-types";
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    SelectBar,
+    CardList
+  },
+  created() {
+    this.$store.dispatch(FETCH_WORKSPACES);
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.app {
+  min-height: 100vh;
+  background-color: $bg-color;
+
+  @include wrapper;
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  &__select-bar {
+    margin-bottom: 23px;
   }
 }
 </style>

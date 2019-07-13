@@ -1,0 +1,28 @@
+@mixin wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin container {
+  width: $container-width;
+  max-width: $container-max-width;
+}
+
+@mixin tablets {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin phones-small {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
