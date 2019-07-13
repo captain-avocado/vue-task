@@ -3,8 +3,10 @@ import App from "./App.vue";
 import store from "./store";
 import SvgIcon from "vue-svgicon";
 import VueTruncate from 'vue-truncate-filter';
-import VueLazyLoad from 'vue-lazyload';
+// import VueLazyLoad from 'vue-lazyload';
+import VueTinyLazyloadImg from 'vue-tiny-lazyload-img'
 
+Vue.use(VueTinyLazyloadImg);
 
 Vue.use(SvgIcon, {
   tagName: "svgicon"
@@ -12,12 +14,12 @@ Vue.use(SvgIcon, {
 
 Vue.use(VueTruncate);
 
-Vue.use(VueLazyLoad, {
-  preLoad: 1,
-  error: './error.png',
-  loading: './loading.gif',
-  attempt: 1
-});
+// Vue.use(VueLazyLoad, {
+//   preLoad: 1,
+//   error: './error.png',
+//   loading: './loading.gif',
+//   attempt: 1
+// });
 
 Vue.filter('installs-round', (string) => {
   const num = Number(string);
