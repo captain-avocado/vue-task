@@ -94,13 +94,30 @@ export default {
   &__info-list {
     text-align: center;
     display: flex;
+
+    padding: 0 12px;
+    @include phones-middle {
+      padding: 0;
+    }
   }
 
   &__info-item {
     flex: 1;
+    display: flex;
+    @include phones-middle {
+      justify-content: center;
+    }
 
-    &:nth-child(2) {
-      flex: 1.5;
+    &:nth-child(3n) {
+      justify-content: flex-end;
+    }
+
+    &:nth-child(2n) {
+      flex: 2.15;
+      justify-content: center;
+      @include phones-middle {
+        flex: 1.8;
+      }
     }
 
     &:not(:last-child) {
